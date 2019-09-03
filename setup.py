@@ -1,4 +1,6 @@
 import setuptools
+import os
+from pathlib import Path
 
 """
 See the following resources:
@@ -6,21 +8,25 @@ See the following resources:
 * https://docs.python.org/3.7/distutils/setupscript.html
 """
 
+root = Path(os.path.realpath(__file__)).parent
+version_file = root / 'VERSION'
+readme_file = root / 'readme.md'
+
 setuptools.setup(
-    name='package',
+    name='python-minimal',
     version='0.1.0',
     packages=setuptools.find_packages(),
-    url='',
-    download_url='',
+    url='https://github.com/felix-hilden/python-minimal',
+    download_url='https://github.com/felix-hilden/python-minimal',
 
-    # At least one of the two
-    author='Your\'s Truly',
-    author_email='yours.truly@mail.org',
-    maintainer='',
-    maintainer_email='',
+    author='Felix Hildén',
+    author_email='felix.hilden@gmail.com',
+    maintainer='Felix Hildén',
+    maintainer_email='felix.hilden@gmail.com',
 
-    description='Package for this and that.',
-    long_description='Well this package does different kinds of things.',
+    description='minimal python package template',
+    long_description=readme_file.read_text(),
+    long_description_content_type='text/markdown',
     license='MIT',
 
     python_requires='>=3.6',
