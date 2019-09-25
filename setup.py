@@ -9,12 +9,12 @@ See the following resources:
 """
 
 root = Path(os.path.realpath(__file__)).parent
-version_file = root / 'VERSION'
+version_file = root / 'package' / 'VERSION'
 readme_file = root / 'readme.md'
 
 setuptools.setup(
     name='python-minimal',
-    version='0.1.0',
+    version=version_file.read_text().strip(),
     packages=setuptools.find_packages(),
     url='https://github.com/felix-hilden/python-minimal',
     download_url='https://github.com/felix-hilden/python-minimal',
@@ -28,6 +28,9 @@ setuptools.setup(
     long_description=readme_file.read_text(),
     long_description_content_type='text/markdown',
     license='MIT',
+    package_data={
+        'package': ['VERSION']
+    },
 
     python_requires='>=3.6',
     install_requires=[],
