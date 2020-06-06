@@ -8,11 +8,15 @@ build/
 dist/
 *.egg-info/
 
-# PyCharm
+# Editors
 .idea/
+.vim/
 
-# Sphinx
+# Tools
+.coverage
+coverage.xml
 docs/build
+.tox/
 
 # Environments
 .env

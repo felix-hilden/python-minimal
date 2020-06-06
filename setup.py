@@ -10,12 +10,15 @@ See the following resources:
 
 root = Path(os.path.realpath(__file__)).parent
 version_file = root / 'package' / 'VERSION'
-readme_file = root / 'readme.md'
+readme_file = root / 'readme.rst'
 
 setuptools.setup(
     name='python-minimal',
     version=version_file.read_text().strip(),
-    packages=setuptools.find_packages(),
+    description='minimal python package template',
+    long_description=readme_file.read_text(),
+    long_description_content_type='text/x-rst',
+
     url='https://github.com/felix-hilden/python-minimal',
     download_url='https://github.com/felix-hilden/python-minimal',
 
@@ -24,10 +27,9 @@ setuptools.setup(
     maintainer='Felix Hildén',
     maintainer_email='felix.hilden@gmail.com',
 
-    description='minimal python package template',
-    long_description=readme_file.read_text(),
-    long_description_content_type='text/markdown',
     license='MIT',
+    packages=setuptools.find_packages(),
+    include_package_data=True,
     package_data={
         'package': ['VERSION']
     },
