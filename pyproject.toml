@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "package"
+description = "Minimal Python package template."
+readme = "readme.rst"
+license = {file = "LICENSE"}
+dynamic = ["version"]
+
+requires-python = ">=3.9"
+dependencies = []
+
+keywords = []
+authors = [{name = "Felix Hildén", email = "felix.hilden@gmail.com"}]
+maintainers = [{name = "Felix Hildén", email = "felix.hilden@gmail.com"}]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.urls]
+homepage = "https://github.com/felix-hilden/python-minimal"
+download = "https://github.com/felix-hilden/python-minimal"
+source = "https://github.com/felix-hilden/python-minimal"
+issues = "https://github.com/felix-hilden/python-minimal/issues"
+documentation = "https://github.com/felix-hilden/python-minimal"
+
+[tool.setuptools.dynamic]
+version = {attr = "package.__version__"}
